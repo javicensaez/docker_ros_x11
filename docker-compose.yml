@@ -1,0 +1,23 @@
+version: "3.4"
+services:
+  test:
+    build: .
+    command: terminator
+    environment:
+      - DISPLAY=$DISPLAY
+      - QT_X11_NO_MITSHM=1
+      - XAUTHORITY=/tmp/.docker.xauth
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /tmp/.docker.xauth:/tmp/.docker.xauth:rw
+      - $XAUTHORITY:/root/.Xauthority
+      - /dev/dri:/dev/dri
+    network_mode: "host"
+    devices:
+       - /dev/dri:/dev/dr
+    user: 1000:1000
+    stdin_open: true
+    tty: true  
+    
+
+        

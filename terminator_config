@@ -1,0 +1,15 @@
+[global_config]
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child0]]]
+      parent = window1
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    custom_command = bash
+    use_custom_command = True
